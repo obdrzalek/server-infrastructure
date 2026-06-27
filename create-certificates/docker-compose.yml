@@ -11,7 +11,7 @@ services:
       - ./domains.conf:/etc/nginx/domains.conf:ro
       - certbot-etc:/etc/letsencrypt:ro
       - certbot-var:/var/lib/letsencrypt:ro
-      - webroot:/var/www/html
+      - certbot-webroot:/var/www/html
     networks:
       - server
 
