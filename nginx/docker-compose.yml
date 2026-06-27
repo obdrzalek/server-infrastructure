@@ -26,24 +26,6 @@ services:
     networks:
       - server
 
-  postgres:
-    image: postgres:17-alpine
-    container_name: postgres
-    restart: unless-stopped
-    environment:
-     POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-    volumes:
-      - ~/postgres-data:/var/lib/postgresql/data
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U eduis -d eduis"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-    ports:
-      - "5763:5432"
-    networks:
-      - server
-
 volumes:
   certbot-etc:
   certbot-var:
@@ -51,4 +33,5 @@ volumes:
 
 networks:
   server:
+    external: true
     name: server
