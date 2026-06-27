@@ -28,11 +28,11 @@ services:
 
 volumes:
   certbot-etc:
-    name: eduis-certbot-etc
+    name: certbot-etc
   certbot-var:
-    name: eduis-certbot-var
+    name: certbot-var
   webroot:
-    name: eduis-certbot-webroot
+    name: certbot-webroot
 
 networks:
   server:
