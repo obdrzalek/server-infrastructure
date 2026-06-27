@@ -1,8 +1,0 @@
-# Secret files
-*.secret
-
-
-nginx.conf
-
-# Environment files
-.env
