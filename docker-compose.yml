@@ -31,8 +31,6 @@ services:
     container_name: postgres
     restart: unless-stopped
     environment:
-      #POSTGRES_DB: eduis
-      #POSTGRES_USER: eduis
      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     volumes:
       - ~/postgres-data:/var/lib/postgresql/data
