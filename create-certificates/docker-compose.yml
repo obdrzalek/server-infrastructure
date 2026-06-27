@@ -12,8 +12,6 @@ services:
       - ${HOME}/certbot/etc:/etc/letsencrypt:ro
       - ${HOME}/certbot/var:/var/lib/letsencrypt:ro
       - ${HOME}/certbot/webroot:/var/www/html
-    networks:
-      - server
 
   certbot:
     image: certbot/certbot
@@ -22,9 +20,3 @@ services:
       - ${HOME}/certbot/etc:/etc/letsencrypt
       - ${HOME}/certbot/var:/var/lib/letsencrypt
       - ${HOME}/certbot/webroot:/var/www/html
-    networks:
-      - server
-
-networks:
-  server:
-    name: server
