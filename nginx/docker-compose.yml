@@ -8,9 +8,9 @@ services:
       - "443:443"
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf:ro
-      - certbot-etc:/etc/letsencrypt:ro
-      - certbot-var:/var/lib/letsencrypt:ro
-      - webroot:/var/www/html
+      - ${HOME}/cerbot/etc:/etc/letsencrypt:ro
+      - ${HOME}/cerbot/var:/var/lib/letsencrypt:ro
+      - ${HOME}/cerbot/webroot:/var/www/html
     networks:
       - server
 
@@ -18,24 +18,13 @@ services:
     image: certbot/certbot
     container_name: certbot
     volumes:
-      - certbot-etc:/etc/letsencrypt
-      - certbot-var:/var/lib/letsencrypt
-      - webroot:/var/www/html
+      - ${HOME}/cerbot/etc:/etc/letsencrypt
+      - ${HOME}/cerbot/var:/var/lib/letsencrypt
+      - ${HOME}/cerbot/webroot:/var/www/html
     # Certbot se po spuštění a ověření sám vypne, neběží pořád
     entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
     networks:
       - server
-
-volumes:
-  certbot-etc:
-    external: true
-    name: certbot-etc
-  certbot-var:
-    external: true
-    name: certbot-var
-  webroot:
-    external: true
-    name: webroot
 
 networks:
   server:
