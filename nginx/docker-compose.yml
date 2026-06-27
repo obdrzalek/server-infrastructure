@@ -1,4 +1,4 @@
-name: server-infrastructure
+name: nginx-cerbot
 services:
   nginx:
     image: nginx:stable-alpine

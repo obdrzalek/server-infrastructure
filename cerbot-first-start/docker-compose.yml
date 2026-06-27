@@ -1,4 +1,4 @@
-name: nginx-firrst-start
+name: nginx-first-start
 services:
   nginx:
     image: nginx:stable-alpine
@@ -33,5 +33,4 @@ volumes:
 
 networks:
   server:
-    external: true
     name: server
