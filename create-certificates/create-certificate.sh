@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # Email pro Let's Encrypt registraci.
-CERTBOT_EMAIL=""
+CERTBOT_EMAIL="admin@eduis.cz"
 
 # Vždy pracuj v adresáři tohoto skriptu, ať je volaný odkudkoliv
 cd "$(dirname "${BASH_SOURCE[0]}")"
