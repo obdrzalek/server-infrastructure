@@ -1,0 +1,5 @@
+# Secret files
+*.secret
+
+# Environment files
+.env
