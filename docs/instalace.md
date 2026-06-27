@@ -1,14 +1,4 @@
-# Server infrastructure
-* repozitář pro nasazení
-  * nginx reverse proxy
-  * postgresl
-  * cerbot
-  * případné další společné dockery
-
-* používá společnou sít `server`
-* jediná exportuje porty
-  * https
-  * postgresql
+# Instalace
 
 # instalace dockeru
 ```bash
@@ -26,20 +16,10 @@ sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin dock
 sudo usermod -aG docker tomas
 ```
 
-
-# instalace server-infrastructure
-* `sudo apt install docker`
+# git a nastavení
 * `git clone git@github.com:obdrzalek/server-infrastructure.git`
-* `chmod +x all*`
-* `chmod -x nginx/deploy.sh`
-* `chmod -x infra/deploy.sh`
+* nastavení spustitelných souborů
+  * `chmod +x ~/server-infrastructure/all*`
+  * `chmod +x ~/server-infrastructure/nginx/deploy.sh`
+  * `chmod +x ~/server-infrastructure/infra/deploy.sh`
 
-# cerbot
-* při prvním spuštění
-```bash
-cd nginx
-cp variants/nginx-without-ssl.conf nginx.conf
-./deploy.sh start
-./deploy.sh stop
-cp variants/nginx-test.eduis.conf nginx.conf
-```
