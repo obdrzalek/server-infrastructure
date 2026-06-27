@@ -39,6 +39,8 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+    ports:
+      - "5763:5432"
     networks:
       - server
 
@@ -49,5 +51,4 @@ volumes:
 
 networks:
   server:
-    external: true
     name: server
