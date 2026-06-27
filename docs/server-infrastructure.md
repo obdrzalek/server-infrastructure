@@ -32,3 +32,11 @@ sudo usermod -aG docker tomas
 * `git clone git@github.com:obdrzalek/server-infrastructure.git`
 * `chmod -x deploy.sh`
 
+# cerbot
+* při prvním spuštění
+```bash
+cp nginx-without-ssl.conf nginx.conf
+./deploy.sh start
+./deploy.sh stop
+cp nginx-with-ssl.conf nginx.conf
+```

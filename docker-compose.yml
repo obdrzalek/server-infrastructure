@@ -49,4 +49,5 @@ volumes:
 
 networks:
   server:
-    driver: bridge
+    external: true
+    name: server
