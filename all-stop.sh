@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-<<<<<<< HEAD
 ~/server-infrastructure/nginx/deploy.sh stop
 ~/eduis/server-infrastructure/test/deploy.sh stop
 ~/server-infrastructure/infra/deploy.sh stop
@@ -9,7 +8,3 @@ set -euo pipefail
 ~/server-infrastructure/infra/deploy.sh start
 ~/eduis/server-infrastructure/test/deploy.sh start
 ~/server-infrastructure/nginx/deploy.sh start
-=======
-~/server-infrastructure/all-stop.sh
-~/server-infrastructure/all-deploy.sh
->>>>>>> d6b880b (Add all-stop.sh and all-deploy.sh scripts for streamlined deployment management)
