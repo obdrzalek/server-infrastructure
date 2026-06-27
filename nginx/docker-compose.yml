@@ -28,10 +28,13 @@ services:
 
 volumes:
   certbot-etc:
+    external: true
     name: certbot-etc
   certbot-var:
+    external: true
     name: certbot-var
   webroot:
+    external: true
     name: certbot-webroot
 
 networks:
