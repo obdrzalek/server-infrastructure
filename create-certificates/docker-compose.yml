@@ -1,8 +1,8 @@
-name: nginx-first-start
+name: create-certificates
 services:
   nginx:
     image: nginx:stable-alpine
-    container_name: nginx
+    container_name: create-certificate-nginx
     ports:
       - "80:80"
       - "443:443"
@@ -17,7 +17,7 @@ services:
 
   certbot:
     image: certbot/certbot
-    container_name: certbot
+    container_name: create-certificate-certbot
     volumes:
       - certbot-etc:/etc/letsencrypt
       - certbot-var:/var/lib/letsencrypt
