@@ -26,7 +26,7 @@ docker compose logs -f nginx   # tail logs for a service
 
 A `.env` file (gitignored) must define `DB_PASSWORD`, consumed by the `postgres` service in [docker-compose.yml](docker-compose.yml).
 
-`README.md` references running `chmod -x deploy.sh` as part of installation, but no `deploy.sh` exists in the repo yet.
+[deploy.sh](deploy.sh) wraps the above as `./deploy.sh {start|stop|restart|status|log} [service]` (referenced by `README.md`'s install steps).
 
 ## Architecture notes
 
