@@ -27,7 +27,7 @@ sudo usermod -aG docker tomas
 ```
 
 
-# instalace
+# instalace server-infrastructure
 * `sudo apt install docker`
 * `git clone git@github.com:obdrzalek/server-infrastructure.git`
 * `chmod -x deploy.sh`
@@ -35,8 +35,8 @@ sudo usermod -aG docker tomas
 # cerbot
 * při prvním spuštění
 ```bash
-cp nginx-without-ssl.conf nginx.conf
+cp variants/nginx-without-ssl.conf nginx.conf
 ./deploy.sh start
 ./deploy.sh stop
-cp nginx-with-ssl.conf nginx.conf
+cp variants/nginx-test.eduis.conf nginx.conf
 ```
